@@ -12,161 +12,93 @@
 
 #import the random module
 import random
-print("\n----------------------===Hacker Stories: 2025 Edition===--------------------- \n"
-"........Keep the spirit of the lies of the skiddies alive (now with AI)!........ \n"
-"..........Because every breach is a supply chain attack now!.......... \n \n")
+print("\n----------------------===Security Proverbs: 2025===--------------------- \n"
+"........Ancient wisdom from the land of DevSecOps........ \n \n")
 
-#select opening
-def opener():
-     opening=random.choice(["So during our last sprint,","Right after the AI audit,","During the 3am incident call,",
-     "Last week during compliance review,","After we failed our SOC 2 audit,","During the vendor risk assessment,",
-     "While reviewing production logs at 2am,","After the intern pushed to main,","During the all-hands security review,"])
-     return str(opening)
+#who commits the sin
+def sinner():
+    thesinner=random.choice([
+    "Dev who commit .env to GitHub,",
+    "Admin who set CORS to *,",
+    "Engineer who hardcode API key,",
+    "Team who deploy on Friday,",
+    "Intern who push to main,",
+    "Architect who disable auth 'temporarily',",
+    "SRE who chmod 777,",
+    "DevOps who set password to 'password123',",
+    "Manager who skip security review,",
+    "Developer who trust npm package published yesterday,",
+    "Contractor who comment out SSL verification,",
+    "Lead who say 'we'll fix it later',",
+    "Engineer who store secrets in ConfigMap,",
+    "Team who run containers as root,",
+    "Admin who expose K8s dashboard to internet,",
+    "Dev who commit 'removing sensitive data',",
+    "Startup who move fast and break things,",
+    "Company who set S3 bucket to public,",
+    "Engineer who log credentials at INFO level,",
+    "Team who use admin:admin in prod,",
+    "Developer who copy-paste from Stack Overflow,",
+    "Manager who say 'security is not priority',",
+    "Architect who build microservices without auth,",
+    "DevOps who put secrets in Docker image,",
+    "Engineer who disable firewall 'for testing',",
+    "Team who trust the vendor,",
+    "Admin who click 'URGENT: Click Here',",
+    "Developer who name bucket 'prod-secrets',",
+    ])
+    return str(thesinner)
 
-#who was involved
-def involved():
-    global selfref #the involved variable here is global
-    global selfref2
-    selfref=random.choice(["I","We"])
-    if selfref == "I":
-        selfref2="I"
-        thewhos=random.choice(["I was"])
-    if selfref == "We":
-        selfref2="we"
-        thewhos=random.choice(["we were","the team was"])
-    if selfref == "They":
-        selfref2="they"
-        thewhos=random.choice(["the DevSecOps team was","the red team was","some AI security researchers were","the threat intel team was",])
-    whosverb=random.choice(["investigating","responding to","hunting for","remediating","triaging"])
-    whodidit=str(thewhos+" "+whosverb)
-    return str(whodidit)
-
-#who was the target
-def target():
-    thetarget=random.choice(["the entire customer database in the landing page HTML.",
-    "a compromised npm package.",
-    "API keys in our public GitHub repo.",
-    "War & Peace in the Terraform script.",
-    "prod creds in a public Postman collection.",
-    "the vendor's S3 bucket (set to public).",
-    "an LLM prompt-injected for admin creds.",
-    "AWS keys in a meme on Twitter.",
-    "secrets commented in the React component.",
-    "'PROD_KEYS_DO_NOT_SHARE.ipynb'.",
-    "exposed .git folder on production.",
-    "CEO's SSO token in a LinkedIn screenshot."])
-    return str(thetarget)
-#what was the vector or tool to the vulnerability
-def vector():
-    verb=random.choice(["deployed","leveraged","fired up","pivoted to",
-    "reached for the trusty","consulted ChatGPT and then used"])
-    thevector=random.choice(["GitHub secret scanning alerts","Semgrep rules","our SIEM dashboard",
-    "TruffleHog","GitGuardian","dependency scanning","SCA tools","SBOM analysis",
-    "container image scanning","policy-as-code","an AI-powered vulnerability scanner"])
-    link=random.choice(["so that "+selfref2+" could detect","where "+selfref2+" could find"])
-    return str(selfref+" "+verb+" "+thevector+" "+link)
-#what was the vulnerability; random string of tech pieces
-def vuln():
-    toolOrVuln=random.choice(["OAuth tokens in localStorage",
-    "API keys (comment: 'TODO: move to env vars')",
-    "AWS creds starting with AKIA",
-    "AI chatbot trained on internal Slack",
-    "JWT secret: 'changeme123'",
-    "CORS set to *",
-    "a dependency published yesterday with 500M downloads",
-    "admin:admin (unchanged since 2019)",
-    "bucket named 'totally-not-production-secrets'",
-    "password 'Password123!' (passed complexity checks)",
-    "MongoDB with no auth (behind firewall though)"])
-    return str(toolOrVuln)
-#what was the exploit; random strings of tech pieces
-def exploit():
-    verb=random.choice(["to exploit","to abuse","to leverage","to weaponize","to chain"])
-    thevuln=random.choice(["Log4Shell (STILL in 2025).",
-    "a supply chain attack (package was 6hrs old).",
-    "OAuth tokens from 'URGENT: Click Here' phishing.",
-    ".env committed with 'quick fix'.",
-    "AI model that memorized SSNs.",
-    "S3 bucket guessed as company-name-prod.",
-    "secret named 'SUPER_SECRET_DO_NOT_STEAL'.",
-    "npm typosquat 'loadash'.",
-    "debug mode in prod.",
-    "K8s dashboard on 0.0.0.0/0."])
-    return str(verb+" "+thevuln)
-#the loot they grabbed...or result... the more ridiculous the better
-def loot():
-    link=random.choice(["After scanning,","Post-remediation,","Eventually,"])
-    theLoot=random.choice([selfref2+" found 47 API keys in Slack #random.",
-    selfref2+" found SSNs in plaintext Redis.",
-    selfref2+" found secrets in 200+ images tagged 'latest'.",
-    selfref2+" found OAuth tokens in a Gist 'temp notes'.",
-    selfref2+" found AWS AdminAccess in 'test.js'.",
-    selfref2+" found creds logged at INFO.",
-    selfref2+" found a 2019 DB backup on intern's laptop.",
-    selfref2+" found prod password on sticky note in Zoom screenshot.",
-    selfref2+" found private keys in Docker Hub (500K pulls).",
-    selfref2+" found all passwords in unencrypted S3.",
-    selfref2+" found competitor's codebase via prompt injection.",
-    selfref2+" found SSH keys in commit 'removing sensitive data'."])
-    return str(link+" "+theLoot)
-#what was the end result
-def ending():
-    theEnding=random.choice([
-    # Blame game - 28+ variations
-    ""+selfref2.capitalize()+" blamed DevOps.",
-    ""+selfref2.capitalize()+" blamed the platform team.",
-    ""+selfref2.capitalize()+" blamed SRE.",
-    ""+selfref2.capitalize()+" blamed the security team.",
-    ""+selfref2.capitalize()+" blamed the frontend devs.",
-    ""+selfref2.capitalize()+" blamed the backend team.",
-    ""+selfref2.capitalize()+" blamed the data engineers.",
-    ""+selfref2.capitalize()+" blamed shadow IT.",
-    ""+selfref2.capitalize()+" blamed the contractors.",
-    ""+selfref2.capitalize()+" blamed the intern.",
-    ""+selfref2.capitalize()+" blamed the offshore team.",
-    ""+selfref2.capitalize()+" blamed the vendor.",
-    ""+selfref2.capitalize()+" blamed the cloud provider.",
-    ""+selfref2.capitalize()+" blamed the CI/CD pipeline.",
-    ""+selfref2.capitalize()+" blamed infrastructure-as-code.",
-    ""+selfref2.capitalize()+" blamed the automation.",
-    ""+selfref2.capitalize()+" blamed GitOps.",
-    ""+selfref2.capitalize()+" blamed Kubernetes.",
-    ""+selfref2.capitalize()+" blamed microservices.",
-    ""+selfref2.capitalize()+" blamed serverless.",
-    ""+selfref2.capitalize()+" blamed the monolith.",
-    ""+selfref2.capitalize()+" blamed technical debt.",
-    ""+selfref2.capitalize()+" blamed the sprint deadline.",
-    ""+selfref2.capitalize()+" blamed 'move fast and break things' culture.",
-    ""+selfref2.capitalize()+" blamed the lack of guardrails.",
-    ""+selfref2.capitalize()+" blamed the previous architect.",
-    ""+selfref2.capitalize()+" blamed the legacy system.",
-    ""+selfref2.capitalize()+" blamed the migration.",
-    # Other endings
-    "CISO wants report by EOD.",
-    "Created 47 Jira tickets.",
-    "Legal still reviewing (6 months now).",
-    "Vendor: 'Not our problem, see SLA §47.3'.",
-    "Dev left company 3 years ago.",
-    "Rotated all 10,000 keys by hand.",
-    "Temp fix from 2019 still in prod.",
-    "Pen test warned this. Nobody read it.",
-    "Logs turned off (CloudWatch too expensive).",
-    "Updating runbook again.",
-    "Another supply chain incident."])
-    return str("\n"+theEnding)
-#run the story
-#set the invlolved variable as global
-selfref=""
-opening=opener()
-involved=involved()
-target=target()
-vector=vector()
-vuln=vuln()
-exploit=exploit()
-loot=loot()
-ending=ending()
+#the karmic consequence
+def consequence():
+    theconsequence=random.choice([
+    "wake up on HackerNews.",
+    "find database on Pastebin.",
+    "wake up with ransomware note.",
+    "find customers on dark web.",
+    "get call from CISO at 3am.",
+    "wake up to incident response team.",
+    "find company on breach notification list.",
+    "get visit from compliance team.",
+    "wake up with SEC investigation.",
+    "find resume on job board.",
+    "get featured in security podcast.",
+    "wake up to Shodan screenshot.",
+    "find credentials in Have I Been Pwned.",
+    "get mentioned in CVE.",
+    "wake up to pen test report.",
+    "find AWS bill for $47,000.",
+    "get tagged in security researcher tweet.",
+    "wake up to SOC 2 audit failure.",
+    "find company logo in breach compilation.",
+    "get invited to all-hands about 'the incident'.",
+    "wake up with GDPR fine.",
+    "find crypto miner in production.",
+    "get promoted to VP of Resume Writing.",
+    "wake up to empty S3 bucket.",
+    "find company in threat intel feed.",
+    "get 'let's sync' from CEO.",
+    "wake up to ransom note in Comic Sans.",
+    "find backdoor older than intern.",
+    "get invited to 'talk about culture'.",
+    "wake up with smelly finger.",
+    "find entire infra on sale in Telegram.",
+    "get LinkedIn messages from recruiters.",
+    "wake up to 200 Jira tickets.",
+    "find production down, backup also down.",
+    "get congratulations from threat actors.",
+    "wake up to compliance violation.",
+    "find logs pointing at own commits.",
+    "get mandatory security training invite.",
+    "wake up to pentest summary: 'Critical'.",
+    "find name in git blame.",
+    ])
+    return str(theconsequence)
+#generate the proverb
 def main():
-    print(opening,involved,target,"\n"+vector,vuln,exploit,loot,ending,"\n\n")
+    sin=sinner()
+    karma=consequence()
+    print(sin,karma,"\n\n")
 
 if __name__ == '__main__':
     main()
