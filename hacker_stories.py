@@ -1,11 +1,15 @@
 #!/usr/bin/python3
 ###########################################################################################
-# This is a Hacker Story Generator - 2025 GRC Edition
-# Born out of idiots (fake hackers) claiming to be all the cybers and the war stories they sadly told.
-# Now updated with modern 2025 security nightmares: AI incidents, supply chain disasters,
-# OAuth mishaps, leaked API keys, and the eternal struggle of secrets in production.
-# Hopefully the legit hackers (and GRC professionals) get some enjoyment from this...
-# Author: ED-209-Mk7 (Updated for 2025)
+# Security Proverbs: 2025 Edition
+# Originally created by: ED-209-Mk7 (https://github.com/DFIRMadness/hackerstories)
+#
+# Restructured in 2025 as haiku-style security proverbs for MOTD in CLI/TUI applications.
+# Born out of idiots (fake hackers) claiming to be all the cybers and the war stories they told.
+#
+# Now featuring: AI disasters, supply chain attacks, OAuth nightmares, secrets in prod,
+# Windows 11 chaos, printer hell, IoT cloud dependency failures, and IT support classics.
+#
+# Format inspired by: "Man who go to sleep with itchy bum, wake up with smelly finger"
 # Setting: Too much caffeine, multiple incident response calls, and existential dread
 # Usage: ./hacker_stories.py or $ python3 ./hacker_stories
 #############################################################################################

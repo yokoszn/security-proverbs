@@ -4,6 +4,8 @@ Ancient wisdom from the land of DevSecOps, IT support, and MSP hell.
 
 A Python script that generates haiku-style security proverbs in the format of "man who go to sleep with itchy bum, wake up with smelly finger" - but for 2025 cybersecurity, cloud disasters, and IT support nightmares.
 
+**Originally based on [DFIRMadness/hackerstories](https://github.com/DFIRMadness/hackerstories)** - reimagined as concise security proverbs for the modern age.
+
 Perfect for Message of the Day (MOTD) in CLI/TUI applications, GRC tools, security dashboards, or anywhere you need a daily reminder of the beautiful chaos we're all living through.
 
 ## Examples
@@ -139,6 +141,12 @@ Got a good sin-consequence pair? PRs welcome! Follow the format:
 ```
 
 Make sure the consequence logically follows from the sin - we're going for dark humor based on painful truth, not random chaos.
+
+## Credits
+
+Originally created by **[DFIRMadness/hackerstories](https://github.com/DFIRMadness/hackerstories)** (ED-209-Mk7)
+
+This 2025 edition restructured the format from verbose stories to haiku-style proverbs and added modern security/IT nightmares including cloud disasters, Windows 11 chaos, printer hell, and IoT dependency failures.
 
 ## License
 
