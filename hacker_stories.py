@@ -43,18 +43,18 @@ def involved():
 
 #who was the target
 def target():
-    thetarget=random.choice(["the entire customer database embedded in the landing page HTML.",
-    "a compromised npm package in production.",
-    "leaked API keys in our public GitHub repo;\n (yeah, someone committed .env files again)",
-    "the entirety of War & Peace somehow in our Terraform script.",
-    "production database credentials in a public Postman collection.",
-    "our third-party SaaS vendor's S3 bucket (spoiler: it was set to public).",
-    "an LLM that was prompt-injected to return admin credentials.",
-    "AWS keys in a meme we posted to Twitter.",
-    "production secrets helpfully commented in the React component.",
-    "API keys in a Jupyter notebook titled 'PROD_KEYS_DO_NOT_SHARE.ipynb'.",
-    "a .git folder exposed on the production website.",
-    "the CEO's SSO session token in a screenshot they posted on LinkedIn."])
+    thetarget=random.choice(["the entire customer database in the landing page HTML.",
+    "a compromised npm package.",
+    "API keys in our public GitHub repo.",
+    "War & Peace in the Terraform script.",
+    "prod creds in a public Postman collection.",
+    "the vendor's S3 bucket (set to public).",
+    "an LLM prompt-injected for admin creds.",
+    "AWS keys in a meme on Twitter.",
+    "secrets commented in the React component.",
+    "'PROD_KEYS_DO_NOT_SHARE.ipynb'.",
+    "exposed .git folder on production.",
+    "CEO's SSO token in a LinkedIn screenshot."])
     return str(thetarget)
 #what was the vector or tool to the vulnerability
 def vector():
@@ -67,66 +67,92 @@ def vector():
     return str(selfref+" "+verb+" "+thevector+" "+link)
 #what was the vulnerability; random string of tech pieces
 def vuln():
-    toolOrVuln=random.choice(["compromised OAuth refresh tokens stored in localStorage",
-    "exposed API keys (with a helpful comment: 'TODO: move to env vars')",
-    "leaked AWS credentials with a key ID that literally starts with AKIA",
-    "an AI chatbot trained on our internal Slack messages",
-    "hardcoded JWT secrets set to 'changeme123'",
-    "CORS set to allow origin: *",
-    "a dependency downloaded 500 million times despite being published yesterday",
-    "admin:admin as the default credentials (unchanged since 2019)",
-    "an S3 bucket named 'totally-not-production-secrets'",
-    "the password 'Password123!' that passed our complexity requirements",
-    "a MongoDB instance with no authentication (it's fine, it's behind a firewall)"])
+    toolOrVuln=random.choice(["OAuth tokens in localStorage",
+    "API keys (comment: 'TODO: move to env vars')",
+    "AWS creds starting with AKIA",
+    "AI chatbot trained on internal Slack",
+    "JWT secret: 'changeme123'",
+    "CORS set to *",
+    "a dependency published yesterday with 500M downloads",
+    "admin:admin (unchanged since 2019)",
+    "bucket named 'totally-not-production-secrets'",
+    "password 'Password123!' (passed complexity checks)",
+    "MongoDB with no auth (behind firewall though)"])
     return str(toolOrVuln)
 #what was the exploit; random strings of tech pieces
 def exploit():
-    verb=random.choice(["to exploit","to abuse","to leverage","to weaponize","to chain together"])
-    thevuln=random.choice(["Log4Shell (yes, STILL in 2025).","a supply chain attack (the package was 6 hours old).",
-    "stolen OAuth tokens from a phishing email titled 'URGENT: Click Here'.",
-    "the .env file someone committed with message 'quick fix'.",
-    "an AI model that memorized everyone's SSNs from training data.",
-    "the S3 bucket they found by literally guessing company-name-prod.",
-    "a CI/CD pipeline with a secret named 'SUPER_SECRET_DO_NOT_STEAL'.",
-    "the npm package 'loadash' instead of 'lodash'.",
-    "debug mode left on in production (whoops).",
-    "the Kubernetes dashboard exposed to 0.0.0.0/0."])
+    verb=random.choice(["to exploit","to abuse","to leverage","to weaponize","to chain"])
+    thevuln=random.choice(["Log4Shell (STILL in 2025).",
+    "a supply chain attack (package was 6hrs old).",
+    "OAuth tokens from 'URGENT: Click Here' phishing.",
+    ".env committed with 'quick fix'.",
+    "AI model that memorized SSNs.",
+    "S3 bucket guessed as company-name-prod.",
+    "secret named 'SUPER_SECRET_DO_NOT_STEAL'.",
+    "npm typosquat 'loadash'.",
+    "debug mode in prod.",
+    "K8s dashboard on 0.0.0.0/0."])
     return str(verb+" "+thevuln)
 #the loot they grabbed...or result... the more ridiculous the better
 def loot():
-    toolOrVuln=random.choice(["compliance automation","incident response playbooks","vendor risk assessments",
-    "policy violation reports","IAM privilege reviews","security posture dashboards",
-    "threat intelligence feeds","vulnerability management workflows","CSPM scans"])
-    link=random.choice(["Once "+selfref2+" got visibility,","After enabling monitoring,","Post-remediation,"])
-    link2=(selfref2+" ran "+toolOrVuln)
-    link3=random.choice(["to discover","to uncover","to identify","and found"])
-    theLoot=random.choice(["47 more API keys in Slack messages titled '#random'.",
-    "customer SSNs in plaintext in the Redis cache.",
-    "production secrets in 200+ Docker images tagged 'latest'.",
-    "OAuth tokens in a GitHub Gist titled 'temp notes'.",
-    "AWS keys with AdministratorAccess in a file called 'test.js'.",
-    "API credentials helpfully logged at INFO level.",
-    "a database backup from 2019 on an intern's laptop.",
-    "the prod database password written on a sticky note in a Zoom screenshot.",
-    "private keys in a public Docker Hub image with 500K pulls.",
-    "every password ever used stored in an unencrypted S3 bucket.",
-    "the entire codebase of a competitor (courtesy of prompt injection).",
-    "SSH keys in a file committed with message 'removing sensitive data'."])
-    return str(link+" "+link2+" "+link3+" "+theLoot)
+    link=random.choice(["After scanning,","Post-remediation,","Eventually,"])
+    theLoot=random.choice([selfref2+" found 47 API keys in Slack #random.",
+    selfref2+" found SSNs in plaintext Redis.",
+    selfref2+" found secrets in 200+ images tagged 'latest'.",
+    selfref2+" found OAuth tokens in a Gist 'temp notes'.",
+    selfref2+" found AWS AdminAccess in 'test.js'.",
+    selfref2+" found creds logged at INFO.",
+    selfref2+" found a 2019 DB backup on intern's laptop.",
+    selfref2+" found prod password on sticky note in Zoom screenshot.",
+    selfref2+" found private keys in Docker Hub (500K pulls).",
+    selfref2+" found all passwords in unencrypted S3.",
+    selfref2+" found competitor's codebase via prompt injection.",
+    selfref2+" found SSH keys in commit 'removing sensitive data'."])
+    return str(link+" "+theLoot)
 #what was the end result
 def ending():
-    theEnding=random.choice(["Now "+selfref2+"'re updating the incident response runbook (again).",
-    "The CISO wants a full report by EOD (he's golfing btw).",
-    ""+selfref2.capitalize()+" created 47 Jira tickets and closed the laptop.",
-    "Still waiting on legal to approve the disclosure (it's been 6 months).",
-    "The vendor said 'not our problem' and pointed to section 47.3 of the SLA.",
-    "Another day, another supply chain incident. Time to update the SBOM!",
-    ""+selfref2.capitalize()+" blamed it on shadow IT (it was definitely shadow IT).",
-    "At least "+selfref2+" have good logs... JK, CloudWatch costs too much so they're off.",
-    "The dev who did it left the company 3 years ago.",
-    "It's fine, "+selfref2+" rotated the keys. All 10,000 of them. By hand.",
-    "Turns out the 'temporary' fix from 2019 was still in prod.",
-    "The pen test report said this would happen. Nobody read it."])
+    theEnding=random.choice([
+    # Blame game - 28+ variations
+    ""+selfref2.capitalize()+" blamed DevOps.",
+    ""+selfref2.capitalize()+" blamed the platform team.",
+    ""+selfref2.capitalize()+" blamed SRE.",
+    ""+selfref2.capitalize()+" blamed the security team.",
+    ""+selfref2.capitalize()+" blamed the frontend devs.",
+    ""+selfref2.capitalize()+" blamed the backend team.",
+    ""+selfref2.capitalize()+" blamed the data engineers.",
+    ""+selfref2.capitalize()+" blamed shadow IT.",
+    ""+selfref2.capitalize()+" blamed the contractors.",
+    ""+selfref2.capitalize()+" blamed the intern.",
+    ""+selfref2.capitalize()+" blamed the offshore team.",
+    ""+selfref2.capitalize()+" blamed the vendor.",
+    ""+selfref2.capitalize()+" blamed the cloud provider.",
+    ""+selfref2.capitalize()+" blamed the CI/CD pipeline.",
+    ""+selfref2.capitalize()+" blamed infrastructure-as-code.",
+    ""+selfref2.capitalize()+" blamed the automation.",
+    ""+selfref2.capitalize()+" blamed GitOps.",
+    ""+selfref2.capitalize()+" blamed Kubernetes.",
+    ""+selfref2.capitalize()+" blamed microservices.",
+    ""+selfref2.capitalize()+" blamed serverless.",
+    ""+selfref2.capitalize()+" blamed the monolith.",
+    ""+selfref2.capitalize()+" blamed technical debt.",
+    ""+selfref2.capitalize()+" blamed the sprint deadline.",
+    ""+selfref2.capitalize()+" blamed 'move fast and break things' culture.",
+    ""+selfref2.capitalize()+" blamed the lack of guardrails.",
+    ""+selfref2.capitalize()+" blamed the previous architect.",
+    ""+selfref2.capitalize()+" blamed the legacy system.",
+    ""+selfref2.capitalize()+" blamed the migration.",
+    # Other endings
+    "CISO wants report by EOD.",
+    "Created 47 Jira tickets.",
+    "Legal still reviewing (6 months now).",
+    "Vendor: 'Not our problem, see SLA §47.3'.",
+    "Dev left company 3 years ago.",
+    "Rotated all 10,000 keys by hand.",
+    "Temp fix from 2019 still in prod.",
+    "Pen test warned this. Nobody read it.",
+    "Logs turned off (CloudWatch too expensive).",
+    "Updating runbook again.",
+    "Another supply chain incident."])
     return str("\n"+theEnding)
 #run the story
 #set the invlolved variable as global
