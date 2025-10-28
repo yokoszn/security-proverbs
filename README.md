@@ -1,4 +1,4 @@
-# Security Proverbs: 2025 Edition
+# Security Proverbs
 
 Ancient wisdom from the land of DevSecOps, IT support, and MSP hell.
 
@@ -144,7 +144,7 @@ Make sure the consequence logically follows from the sin - we're going for dark 
 
 ## Credits
 
-Originally created by **[DFIRMadness/hackerstories](https://github.com/DFIRMadness/hackerstories)** (ED-209-Mk7)
+Originally created by **[DFIRMadness/hackerstories](https://github.com/DFIRMadness/hackerstories)**
 
 This 2025 edition restructured the format from verbose stories to haiku-style proverbs and added modern security/IT nightmares including cloud disasters, Windows 11 chaos, printer hell, and IoT dependency failures.
 
