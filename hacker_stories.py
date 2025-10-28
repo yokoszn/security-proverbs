@@ -1,95 +1,104 @@
 #!/usr/bin/python3
 ###########################################################################################
-# This is a Hacker Stroy Generator.  It is born out of idiots (fake hackers) claiming to be
-# all the cybers and the war stories they sadly told.
-# Hopefully the legit hackers (and everyone else) get some enjoyment from this...
-# Author: ED-209-Mk7
-# Date: 0800 March 1st
-# Setting: Light caffeine and motivated
+# This is a Hacker Story Generator - 2025 GRC Edition
+# Born out of idiots (fake hackers) claiming to be all the cybers and the war stories they sadly told.
+# Now updated with modern 2025 security nightmares: AI incidents, supply chain disasters,
+# OAuth mishaps, leaked API keys, and the eternal struggle of secrets in production.
+# Hopefully the legit hackers (and GRC professionals) get some enjoyment from this...
+# Author: ED-209-Mk7 (Updated for 2025)
+# Setting: Too much caffeine, multiple incident response calls, and existential dread
 # Usage: ./hacker_stories.py or $ python3 ./hacker_stories
 #############################################################################################
 
 #import the random module
 import random
-print("\n----------------------===Hacker Stories===--------------------- \n"
-"..........Keep the spirit of the lies of the skiddies alive!.......... \n \n")
+print("\n----------------------===Security Proverbs: 2025===--------------------- \n"
+"........Ancient wisdom from the land of DevSecOps........ \n \n")
 
-#select opening
-def opener():
-     opening=random.choice(["So a few years back,","Last week,","One time,","Last night,"])
-     return str(opening)
+#who commits the sin
+def sinner():
+    thesinner=random.choice([
+    "Dev who commit .env to GitHub,",
+    "Admin who set CORS to *,",
+    "Engineer who hardcode API key,",
+    "Team who deploy on Friday,",
+    "Intern who push to main,",
+    "Architect who disable auth 'temporarily',",
+    "SRE who chmod 777,",
+    "DevOps who set password to 'password123',",
+    "Manager who skip security review,",
+    "Developer who trust npm package published yesterday,",
+    "Contractor who comment out SSL verification,",
+    "Lead who say 'we'll fix it later',",
+    "Engineer who store secrets in ConfigMap,",
+    "Team who run containers as root,",
+    "Admin who expose K8s dashboard to internet,",
+    "Dev who commit 'removing sensitive data',",
+    "Startup who move fast and break things,",
+    "Company who set S3 bucket to public,",
+    "Engineer who log credentials at INFO level,",
+    "Team who use admin:admin in prod,",
+    "Developer who copy-paste from Stack Overflow,",
+    "Manager who say 'security is not priority',",
+    "Architect who build microservices without auth,",
+    "DevOps who put secrets in Docker image,",
+    "Engineer who disable firewall 'for testing',",
+    "Team who trust the vendor,",
+    "Admin who click 'URGENT: Click Here',",
+    "Developer who name bucket 'prod-secrets',",
+    ])
+    return str(thesinner)
 
-#who was involved
-def involved():
-    global selfref #the involved variable here is global
-    global selfref2
-    selfref=random.choice(["I","We"])
-    if selfref == "I":
-        selfref2="I"
-        thewhos=random.choice(["I was"])
-    if selfref == "We":
-        selfref2="we"
-        thewhos=random.choice(["we were","the team was"])
-    if selfref == "They":
-        selfref2="they"
-        thewhos=random.choice(["the boys were","the girls were","the Agency was","some operators (from that one place) were",])
-    whosverb=random.choice(["targeting","itching to get inside of","ordered to pop","looking to get inside"])
-    whodidit=str(thewhos+" "+whosverb)
-    return str(whodidit)
-
-#who was the target
-def target():
-    thetarget=random.choice(["a Chinese embassy.","a Russian embassy.",
-    "the computer of an unamed leader of an unamed country;\n you understand I can't say who.",
-    "an American Company.","some losers computer.","my old school's network.","some network.",
-    "Apple.","Microsoft."])
-    return str(thetarget)
-#what was the vector or tool to the vulnerability
-def vector():
-    verb=random.choice(["used","leveraged","busted out the old","flipped on",
-    "reached for the trusty","connected with"])
-    thevector=random.choice(["RDP","TCP","UDP","telnet","SSH","WebDAV","Metasploit","Armitage","Google hacking"])
-    link=random.choice(["so that "+selfref2+" could use","where "+selfref2+" could use"])
-    return str(selfref+" "+verb+" "+thevector+" "+link)
-#what was the vulnerability; randoms string of tech pieces
-def vuln():
-    toolOrVuln=random.choice(["sqlmap","Sparta","Maltego","Meterpreter","Python","Cain and Able",
-    "a Top Secret Cyber Weapon"])
-    return str(toolOrVuln)
-#what was the exploit; random strings of tech pieces
-def exploit():
-    verb=random.choice(["to attack","to go through","to use","to bust in with","to brute force"])
-    thevuln=random.choice(["MS 08-067.","MS 17-10.","an old Zero Day "+selfref2+" had laying around.",
-    "default credentials."])
-    return str(verb+" "+thevuln)
-#the loot they grabbed...or result... the more ridiculous the better
-def loot():
-    toolOrVuln=random.choice(["Mimikatz","John the Ripper","Sparta","Maltego","Meterpreter","Python","Cain and Able",
-    "a Top Secret Cyber Weapon"])
-    link=random.choice(["Once "+selfref2+" got in","Once inside","From within the network"])
-    link2=(selfref2+" used "+toolOrVuln)
-    link3=random.choice(["to find","to nab","to pull down","so that "+selfref2+" could get"])
-    theLoot=random.choice(["passports.","passwords","secret plans.","classified info on them",
-    "classified plans.","their launch codes.","Twitter passwords.","Bitcoin."])
-    return str(link+" "+link2+" "+link3+" their"+" "+theLoot)
-#what was the end result
-def ending():
-    theEnding=random.choice(["Its Classified!","Don't tell anyone or "+selfref2+" will have to kill you.",
-    "Don't tell anyone or "+selfref2+" could go to jail."])
-    return str("\n"+theEnding)
-#run the story
-#set the invlolved variable as global
-selfref=""
-opening=opener()
-involved=involved()
-target=target()
-vector=vector()
-vuln=vuln()
-exploit=exploit()
-loot=loot()
-ending=ending()
+#the karmic consequence
+def consequence():
+    theconsequence=random.choice([
+    "wake up on HackerNews.",
+    "find database on Pastebin.",
+    "wake up with ransomware note.",
+    "find customers on dark web.",
+    "get call from CISO at 3am.",
+    "wake up to incident response team.",
+    "find company on breach notification list.",
+    "get visit from compliance team.",
+    "wake up with SEC investigation.",
+    "find resume on job board.",
+    "get featured in security podcast.",
+    "wake up to Shodan screenshot.",
+    "find credentials in Have I Been Pwned.",
+    "get mentioned in CVE.",
+    "wake up to pen test report.",
+    "find AWS bill for $47,000.",
+    "get tagged in security researcher tweet.",
+    "wake up to SOC 2 audit failure.",
+    "find company logo in breach compilation.",
+    "get invited to all-hands about 'the incident'.",
+    "wake up with GDPR fine.",
+    "find crypto miner in production.",
+    "get promoted to VP of Resume Writing.",
+    "wake up to empty S3 bucket.",
+    "find company in threat intel feed.",
+    "get 'let's sync' from CEO.",
+    "wake up to ransom note in Comic Sans.",
+    "find backdoor older than intern.",
+    "get invited to 'talk about culture'.",
+    "wake up with smelly finger.",
+    "find entire infra on sale in Telegram.",
+    "get LinkedIn messages from recruiters.",
+    "wake up to 200 Jira tickets.",
+    "find production down, backup also down.",
+    "get congratulations from threat actors.",
+    "wake up to compliance violation.",
+    "find logs pointing at own commits.",
+    "get mandatory security training invite.",
+    "wake up to pentest summary: 'Critical'.",
+    "find name in git blame.",
+    ])
+    return str(theconsequence)
+#generate the proverb
 def main():
-    print(opening,involved,target,"\n"+vector,vuln,exploit,loot,ending,"\n\n")
+    sin=sinner()
+    karma=consequence()
+    print(sin,karma,"\n\n")
 
 if __name__ == '__main__':
     main()
